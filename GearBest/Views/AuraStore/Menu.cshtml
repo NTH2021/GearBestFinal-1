@@ -1,0 +1,38 @@
+﻿@model IEnumerable<GearBest.Models.Menu>
+@using GearBest.Models;
+@{
+
+	Customer acc = (Customer)Session["usr"];
+	string username = "";
+	if (Request.Cookies["usr"] != null)
+	{
+		username = Request.Cookies["usr"].Value;
+
+	}
+
+}
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+	<ul class="navbar-nav">
+		@foreach (var item in Model)
+		{
+			<li class="dropdown submenu">
+				<a class="dropdown-toggle" href="@Url.Action(@item.Link,"AuraStore")" role="button" aria-haspopup="true" aria-expanded="false">@item.Name</a>
+				<ul class="dropdown-menu">
+					@Html.Action("ItemMenuType", "AuraStore", new { id = item.ID })
+					@Html.Action("Brandtype", "AuraStore", new { id = item.ID })
+
+				</ul>
+			</li>
+
+
+
+
+
+
+		}
+		<li class="search_icon"><a class="popup-with-zoom-anim" href="#test-search"><i class="icon icon-Search"></i></a></li>
+		@Html.Action("CartPartial", "Cart")
+	</ul>
+</div>

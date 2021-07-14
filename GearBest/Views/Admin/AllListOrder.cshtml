@@ -1,0 +1,94 @@
+﻿@model IEnumerable<GearBest.Models.OrderEntity>
+
+@{
+	ViewBag.Title = "ListOrder";
+	Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card shadow mb-4">
+	<div class="card-header py-3">
+		<h2 class="text-center">OrDer</h2>
+
+	</div>
+	<div class="card-body">
+		<div class="table-responsive">
+			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+				<thead>
+					<tr>
+						<th>
+							@Html.DisplayNameFor(model => model.Orderdate)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.Deliverydate)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.Totalprice)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.Status)
+						</th>
+
+						<th>
+							@Html.DisplayNameFor(model => model.Customer.Name)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.Customer.Address)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.Customer.EmailAddress)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.Customer.Phone)
+						</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model)
+					{
+					<tr>
+						<td>
+							@Html.DisplayFor(modelItem => item.Orderdate)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.Deliverydate)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.Totalprice)
+						</td>
+
+						<td>
+							@if (item.Status == true)
+							{
+								<p>Active</p>
+							}
+							else
+							{
+								<p>UnActive</p>
+							}
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.Customer.Name)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.Customer.Address)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.Customer.EmailAddress)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.Customer.Phone)
+						</td>
+						<td>
+
+							@Html.ActionLink("Detail", "OrderDetail", new { id = item.ID })
+							@Html.ActionLink("Delete", "DeleteOrder", new { id = item.ID })
+						</td>
+					</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+

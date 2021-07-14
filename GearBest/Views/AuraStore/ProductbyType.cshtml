@@ -1,0 +1,50 @@
+﻿@model IEnumerable<GearBest.Models.Item>
+
+@{ ViewBag.Title = "ProductbyType";
+   Layout = "~/Views/Shared/_LayoutHomePage.cshtml"; 
+}
+
+
+<section class="welcome_bakery_area cake_feature_main p_100">
+    <div class="container">
+        <div class="main_title">
+            <h2>SẢN PHẨM</h2>
+            <h5> Seldolor sit amet consect etur</h5>
+        </div>
+
+        <div class="cake_feature_row row">
+            @foreach (var item in Model)
+            {
+
+<div class="col-lg-3 col-md-4 col-6">
+
+    <div class="cake_feature_item">
+        <a href="@Url.Action("Detail","AuraStore",new { id=item.ID})">
+            <div class="cake_img">
+
+                <img class="resize-image" src="~/img/Item/@item.Picture" alt="@item.Name">
+
+            </div>
+        </a>
+        <div class="cake_text">
+            <h4>$ @item.SellPrice</h4>
+            <h3>@item.Name</h3>
+            @if (item.Quantity == 0)
+            {
+<p style="color:red">Out of Stock</p>}
+            @if (item.Quantity == 0)
+            {<a class="pest_btn disabled">Add to cart</a> }
+            else
+            { <a class="pest_btn" href="@Url.Action("AddtoCart","Cart",new {@id=item.ID,@strURL=Request.Url.ToString() })">Add to cart</a>}
+
+
+
+        </div>
+    </div>
+
+</div>}
+
+        </div>
+
+    </div>
+</section>

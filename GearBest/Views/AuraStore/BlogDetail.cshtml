@@ -1,0 +1,183 @@
+﻿
+@{
+    ViewBag.Title = "BlogDetail";
+    Layout = "~/Views/Shared/_LayoutHomePage.cshtml";
+}
+
+<section class="main_blog_area p_100">
+	<div class="container">
+		<div class="row blog_area_inner">
+			<div class="col-lg-9">
+				<div class="main_blog_inner single_blog_inner">
+					
+					<div class="blog_item">
+						<div class="blog_img">
+							<img class="img-fluid" width="840" height="360" src="~/img/Item/@Model.Picture" alt="">
+						</div>
+						<div class="blog_text">
+							<div class="blog_time">
+								<div class="float-left">
+									<a href="#">@Model.DateImport</a>
+								</div>
+								<div class="float-right">
+									<ul class="list_style">
+										<li><a href="#">By :  Admin</a></li>
+										<li><a href="#">vote, Tốt</a></li>
+										<li><a href="#">Comments: 8</a></li>
+									</ul>
+								</div>
+							</div>
+							<a href="#"><h4>@Model.Title</h4></a>
+							<p>@Model.ShortTitle</p>
+						</div>
+					</div>
+					
+					<div class="single_element_text">
+						<p>@Model.Describe</p>
+					</div>
+
+					<div class="s_comment_list">
+						<h3 class="cm_title_br">Comments</h3>
+						<div class="s_comment_list_inner">
+							<div class="media">
+								<div class="d-flex">
+									<img src="img/comment/comment-1.jpg" alt="">
+								</div>
+								<div class="media-body">
+									<a href="#"><h4>T. Tommarello</h4></a>
+                                    <p>Really like this purchase. Core i3 1005G1, 128GB NVME SSD and 8GB RAM. It feels very snappy and responsive. 
+									The fingerprint logon is super fast and is one of the reasons I got it over the cheaper Acer. 
+									I got this for my wife as she only needs the most 
+									basic specs but I did not want to settle for anything less than a 10th generation Intl Core or 4000 series AMD Ryzen.
+									I really would not change a thing about it for the price except that it should have had 250GB to 500GB of storage. 
+									The OEM is only paying $20 for the Hynix SSD they could have invested $10 more for a larger SSD.</p>
+									<div class="date_rep">
+										<a href="#">Nov 27 2021</a>
+										<a href="#">Reply</a>
+									</div>
+								</div>
+							</div>
+							<div class="media">
+								<div class="d-flex">
+									<img src="img/comment/comment-1.jpg" alt="">
+								</div>
+								<div class="media-body">
+									<a href="#"><h4>K Patrick</h4></a>
+                                    <p>The worst brand new laptop computer I have ever purchased. 
+									Screen quality is so so. Can’t run simple games without lagging out.. audio isn’t even relevant. 
+									Can’t hear it at all on 100% volume. Audio jack stopped working on the 5th day. 
+									Mouse touchpad stopped working after a week. 
+									Just bad bad bad. Spend a hundred more on something worth while. Never again</p>
+									<div class="date_rep">
+										<a href="#">Nov 27 2021</a>
+										<a href="#">Reply</a>
+									</div>
+								</div>
+							</div>
+							<div class="media">
+								<div class="d-flex">
+									<img src="img/comment/comment-1.jpg" alt="">
+								</div>
+								<div class="media-body">
+									<a href="#"><h4>Grace Maynard</h4></a>
+                                    <p>Ok. Lets talk. No fluff, no fake optimism. 
+									Out of all the things I have ever bought on amazon, this purchase was honestly the best. 
+									First of all, this laptop exceeded all expectations I had. 
+									Like for example, when I saw the laptop for the first time, the screen was sooo much bigger than I anticipated! I love the feeling of the keys. 
+									Also, I'm sure you've notice there are a lot of reviews complaining about the screen quality. Ok. </p>
+									<div class="date_rep">
+										<a href="#">Nov 27 2021</a>
+										<a href="#">Reply</a>
+									</div>
+									<div class="media">
+										<div class="d-flex">
+											<img src="img/comment/comment-1.jpg" alt="">
+										</div>
+										<div class="media-body">
+											<a href="#"><h4>Armen Arevian</h4></a>
+                                            <p>The product is defective. the USB C port is not working and that is the most important port on the laptop as it connects to the dock station.</p>
+											<div class="date_rep">
+												<a href="#">Nov 27 2021</a>
+												<a href="#">Reply</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="media">
+								<div class="d-flex">
+									<img src="img/comment/comment-1.jpg" alt="">
+								</div>
+								<div class="media-body">
+									<a href="#"><h4>Alonso</h4></a>
+                                    <p>Es una laptop muuy buena, tiene teclado retroiluminado (no RGB), buenos componentes, el mouse pad tiene un lector de huellas que funciona muy bien y me gusta mucho, la cámara es de buena calidad, y el micrófono no me gusta tanto, pero sirve muy bien.</p>
+									<div class="date_rep">
+										<a href="#">Nov 27 2021</a>
+										<a href="#">Reply</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="s_comment_area">
+						<h3 class="cm_title_br">Leave a Comment</h3>
+						<div class="s_comment_inner">
+							<form class="row contact_us_form" action="http://galaxyanalytics.net/demos/cake/theme/cake-html/contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+								<div class="form-group col-md-6">
+									<input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+								</div>
+								<div class="form-group col-md-6">
+									<input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address">
+								</div>
+								<div class="form-group col-md-12">
+									<textarea class="form-control" name="message" id="message" rows="1" placeholder="Wrtie message"></textarea>
+								</div>
+								<div class="form-group col-md-12">
+									<button type="submit" value="submit" class="btn order_s_btn form-control">submit now</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="right_sidebar_area">
+					<aside class="r_widget search_widget">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Enter Search Keywords">
+							<div class="input-group-append">
+								<button class="btn" type="button"><i class="icon icon-Search"></i></button>
+							</div>
+						</div>
+					</aside>
+                    <aside class="r_widget categories_widget">
+                        <div class="r_title">
+                            <h3>Danh mục sản phẩm</h3>
+                        </div>
+                        <ul class="list_style">
+                            <li><a href="@Url.Action("Helmets","AuraStore")">Điện Thoại</a></li>
+                            <li><a href="@Url.Action("RiddingGear","AuraStore")">Máy Tính</a></li>
+                            <li><a href="@Url.Action("Accsesories","AuraStore")">Phụ Kiện</a></li>
+                            <li><a href="@Url.Action("Brand","AuraStore")">Thương Hiệu</a></li>
+
+                        </ul>
+                    </aside>
+					@Html.Action("RecentBlog", "AuraStore")
+					<aside class="r_widget tags_widget">
+						<div class="r_title">
+							<h3>Tags</h3>
+						</div>
+                        <ul class="list_style">
+                            <li><a href="#">SẢN PHẨM MỚI</a></li>
+                            <li><a href="#">ĐÁNH GIÁ</a></li>
+                            <li><a href="#">MẸO HAY</a></li>
+                            <li><a href="#">TƯ VẤN</a></li>
+                            <li><a href="#">KHUYẾN MÃI</a></li>
+                            <li><a href="#">TIN TỨC</a></li>
+                        </ul>
+					</aside>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

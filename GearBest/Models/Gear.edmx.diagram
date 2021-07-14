@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fb7f173f6cf24df995f9c9ae473dd2a3" Name="Diagram1">
+        <EntityTypeShape EntityType="GearBestModel.About" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GearBestModel.Admin" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GearBestModel.Banner" Width="1.5" PointX="9.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GearBestModel.Blog" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GearBestModel.Brand" Width="1.5" PointX="3.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GearBestModel.Contact" Width="1.5" PointX="11.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GearBestModel.Customer" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GearBestModel.Feedback" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GearBestModel.Footer" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="GearBestModel.FooterDetail" Width="1.5" PointX="10" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GearBestModel.Item" Width="1.5" PointX="6" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GearBestModel.ItemType" Width="1.5" PointX="3.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GearBestModel.Menu" Width="1.5" PointX="1.5" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GearBestModel.Order" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GearBestModel.OrderDetail" Width="1.5" PointX="8.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GearBestModel.Payment" Width="1.5" PointX="5.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GearBestModel.ReplyFeedback" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <AssociationConnector Association="GearBestModel.FK__Brand__MenuID__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="GearBestModel.FK__Item__BrandID__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="GearBestModel.FK__Feedback__Custom__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="GearBestModel.FK__Order__CustomerI__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="GearBestModel.FK__ReplyFeed__Custo__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="GearBestModel.FK__ReplyFeed__FeedB__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="GearBestModel.FK__FooterDet__Foote__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="GearBestModel.FK__Item__TypeID__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="GearBestModel.FK__OrderDeta__ItemI__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="GearBestModel.FK__ItemType__MenuID__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="GearBestModel.FK__OrderDeta__Order__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="GearBestModel.FK__Payment__OrderID__3D5E1FD2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

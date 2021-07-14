@@ -1,0 +1,116 @@
+﻿@using GearBest.Models
+@model List<CartEntity>
+@{
+	ViewBag.Title = "Order";
+	Layout = "~/Views/Shared/_LayoutHomePage.cshtml";
+}
+<h2 style="text-align:center;color:#49e4fa">Order Information</h2>
+@{
+	Customer cus = (Customer)Session["usr"];
+}
+<table align="center">
+	@using (Html.BeginForm())
+	{
+		@Html.ValidationSummary(true)
+		<tr style="height:40px">
+			<td> Name: </td>
+			<td style="font-weight:bold">  @cus.Name </td>
+		</tr>
+		<tr style="height:40px">
+			<td> Address: </td>
+			<td style="font-weight:bold">  @cus.Address </td>
+		</tr>
+		<tr style="height:40px">
+			<td> Phone number: </td>
+			<td style="font-weight:bold">  @cus.Phone </td>
+		</tr>
+		<tr style="height:40px">
+			<td> Email Adress: </td>
+			<td style="font-weight:bold"> @cus.EmailAddress  </td>
+		</tr>
+		<tr style="height:40px">
+			<td> Order date: </td>
+			<td style="font-weight:bold"> @DateTime.Now.ToShortDateString() </td>
+		</tr>
+
+		<tr style="height:40px">
+			<td></td>
+			<td>
+				<input type="Submit" class="pest_btn" value="Agree to order" />
+				<a class="pest_btn" href="@Url.Action("Newinformation","Cart")">Edit Address</a>
+			</td>
+
+		</tr>
+	}
+</table>
+
+<section class="cart_table_area p_100">
+	<div class="container">
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col" style="background-color:#49e4fa;color:white">Preview</th>
+						<th scope="col" style="background-color:#49e4fa;color:white">Product</th>
+						<th scope="col" style="background-color:#49e4fa;color:white">Price</th>
+						<th scope="col" style="background-color:#49e4fa;color:white">Quantity</th>
+						<th scope="col" style="background-color:#49e4fa;color:white">Total</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model)
+					{
+						<tr>
+							<td>
+								<img class="resize-image-cart" src="~/img/Item/@item.Picture" alt="">
+
+							</td>
+							@using (Html.BeginForm("EditCart", "Cart", new { @id = item.IdItem }))
+							{
+								<td>@item.Name</td>
+								<td>@String.Format("{0:0,0}", item.Prices)</td>
+
+
+								<td class="cart_quantity">
+									<div class="cart_quantity_button">
+										<input class="cart_quantity_input" type="number" name="txtSoluong" min="1" max="10" value="@item.Quantity">
+									</div>
+								</td>
+
+								<td>@String.Format("{0:0,0}", item.TotalPrices)</td>
+
+							}
+						</tr>
+					}
+
+				</tbody>
+			</table>
+		</div>
+
+
+	<div class="row cart_total_inner">
+		<div class="col-lg-7"></div>
+		<div class="col-lg-5">
+			<div class="cart_total_text">
+				<div class="cart_head" style="background-color:#49e4fa;color:white">
+					Cart Total
+				</div>
+				<div class="sub_total">
+					<h5>Quantity <span>@ViewBag.TotalQuantity</span></h5>
+				</div>
+				<div class="total">
+					<h4>Total <span>@String.Format("{0:0,0}", ViewBag.ToTalPrice)</span></h4>
+				</div>
+				<div class="cart_footer">
+					<div class="cart_footer">						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</section>
+
+
+
